@@ -27,7 +27,7 @@ final questions = [
     const Option(text: "Elemento Agua", isCorrect: false),
     const Option(text: "Elemento Ar", isCorrect: false),
     const Option(text: "Elemento Eletrico", isCorrect: true),
-    const Option(text: "Elemento Terra", isCorrect: true),
+    const Option(text: "Elemento Terra", isCorrect: false),
   ]),
   Question(
     text: "Electrabuzz é um pokemon?",
@@ -35,7 +35,7 @@ final questions = [
       const Option(text: "Elemento Agua", isCorrect: false),
       const Option(text: "Elemento Ar", isCorrect: false),
       const Option(text: "Elemento Eletrico", isCorrect: true),
-      const Option(text: "Elemento Terra", isCorrect: true),
+      const Option(text: "Elemento Terra", isCorrect: false),
     ],
   ),
   Question(
@@ -44,7 +44,7 @@ final questions = [
       const Option(text: "Elemento Agua", isCorrect: false),
       const Option(text: "Elemento Ar", isCorrect: false),
       const Option(text: "Elemento Eletrico", isCorrect: true),
-      const Option(text: "Elemento Terra", isCorrect: true),
+      const Option(text: "Elemento Terra", isCorrect: false),
     ],
   ),
   Question(
@@ -53,7 +53,7 @@ final questions = [
       const Option(text: "Elemento Agua", isCorrect: false),
       const Option(text: "Elemento Ar", isCorrect: false),
       const Option(text: "Elemento Eletrico", isCorrect: true),
-      const Option(text: "Elemento Terra", isCorrect: true),
+      const Option(text: "Elemento Terra", isCorrect: false),
     ],
   ),
   Question(
@@ -62,7 +62,7 @@ final questions = [
       const Option(text: "Elemento Agua", isCorrect: false),
       const Option(text: "Elemento Ar", isCorrect: false),
       const Option(text: "Elemento Eletrico", isCorrect: true),
-      const Option(text: "Elemento Terra", isCorrect: true),
+      const Option(text: "Elemento Terra", isCorrect: false),
     ],
   ),
   Question(
@@ -71,7 +71,7 @@ final questions = [
       const Option(text: "Elemento Agua", isCorrect: false),
       const Option(text: "Elemento Ar", isCorrect: false),
       const Option(text: "Elemento Eletrico", isCorrect: true),
-      const Option(text: "Elemento Terra", isCorrect: true),
+      const Option(text: "Elemento Terra", isCorrect: false),
     ],
   ),
   Question(
@@ -80,7 +80,7 @@ final questions = [
       const Option(text: "Elemento Agua", isCorrect: false),
       const Option(text: "Elemento Ar", isCorrect: false),
       const Option(text: "Elemento Eletrico", isCorrect: true),
-      const Option(text: "Elemento Terra", isCorrect: true),
+      const Option(text: "Elemento Terra", isCorrect: false),
     ],
   ),
 ];
