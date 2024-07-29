@@ -31,8 +31,7 @@ class QuestionWidget extends StatefulWidget {
 class _QuestionWidgetState extends State<QuestionWidget> {
   int _questionNumber = 0;
   int _score = 0;
-  final List<Question> _questions =
-      questions; // Importando a lista de perguntas do seu modelo
+  final List<Question> _questions = questions;
 
   void _selectOption(Option option) {
     setState(() {
