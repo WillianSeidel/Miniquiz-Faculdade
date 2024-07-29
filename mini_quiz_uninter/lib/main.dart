@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_quiz_uninter/Data/data.dart';
 import 'package:mini_quiz_uninter/Models/model.dart';
 
 void main() {
