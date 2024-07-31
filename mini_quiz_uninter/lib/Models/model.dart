@@ -1,23 +1,23 @@
-class Question {
-  final String text;
-  final List<Option> options;
-  bool isLocked;
-  Option? selectedOption;
-
-  Question({
-    required this.text,
-    required this.options,
-    this.isLocked = false,
-    this.selectedOption,
-  });
+class Category {
+  final String name;
+  final String image;
+  final List<QuizSet> quizSets;
+  Category({required this.name, required this.image, required this.quizSets});
 }
 
-class Option {
-  final String text;
-  final bool isCorrect;
+class QuizSet {
+  final String name;
+  final List<Question> questions;
 
-  const Option({
-    required this.text,
-    required this.isCorrect,
-  });
+  QuizSet({required this.name, required this.questions});
+}
+
+class Question {
+  String question;
+  List<String> options;
+  int selectedIndex;
+  Question(
+      {required this.question,
+      required this.options,
+      required this.selectedIndex});
 }
