@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_quiz_uninter/Data/data.dart';
+import 'package:mini_quiz_uninter/screens/category_set_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -77,7 +78,14 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final category = Data.categories[index];
                     return InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  CategorySetScreen(category: category),
+                            ));
+                      },
                       child: Container(
                         padding:
                             EdgeInsets.symmetric(vertical: 20, horizontal: 10),
@@ -89,7 +97,19 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             Padding(
                               padding: EdgeInsets.all(10),
+                              child: Image.asset(
+                                category.image,
+                                height: 100,
+                                width: 100,
+                              ),
                             ),
+                            SizedBox(height: 10),
+                            Text(category.name,
+                                style: TextStyle(
+                                  fontSize: 22,
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontWeight: FontWeight.w600,
+                                ))
                           ],
                         ),
                       ),
