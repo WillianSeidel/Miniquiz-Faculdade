@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mini_quiz_uninter/screens/home_screen.dart';
-//import 'package:mini_quiz_uninter/screens/question_screen.dart';
 
 class Inicio extends StatelessWidget {
   const Inicio({super.key});
@@ -23,8 +22,8 @@ class Inicio extends StatelessWidget {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Colors.indigo,
-                          Colors.purple,
+                          Color.fromARGB(255, 3, 16, 92),
+                          Color.fromARGB(255, 37, 229, 243),
                         ]),
                     borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(70),
@@ -47,8 +46,8 @@ class Inicio extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Colors.purple,
-                        Colors.indigo,
+                        Color.fromARGB(255, 3, 16, 92),
+                        Color.fromARGB(255, 37, 229, 243),
                       ]),
                 ),
               ),
@@ -94,8 +93,8 @@ class Inicio extends StatelessWidget {
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                               colors: [
-                                Colors.purple,
-                                Colors.indigo,
+                                Color.fromARGB(255, 37, 229, 243),
+                                Color.fromARGB(255, 3, 16, 92),
                               ]),
                         ),
                         child: InkWell(
@@ -110,7 +109,7 @@ class Inicio extends StatelessWidget {
                             'Iniciar',
                             style: TextStyle(
                               fontSize: 20,
-                              color: Colors.white,
+                              color: const Color.fromARGB(255, 255, 255, 255),
                               fontWeight: FontWeight.bold,
                               letterSpacing: 1,
                             ),

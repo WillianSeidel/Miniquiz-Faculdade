@@ -49,8 +49,8 @@ class _QuizScreenState extends State<QuizScreen> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Colors.indigo,
-                Colors.purple,
+                Color.fromARGB(255, 3, 16, 92),
+                Color.fromARGB(255, 37, 229, 243),
               ]),
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(0),
@@ -154,7 +154,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.all(20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -162,7 +162,7 @@ class _QuizScreenState extends State<QuizScreen> {
                         ? ElevatedButton(
                             onPressed: goToPreviousQuestion,
                             child: Text(
-                              'Voltar',
+                              '  Voltar  ',
                               style: TextStyle(
                                 fontSize: 16,
                                 color: Colors.black,
@@ -202,7 +202,7 @@ class _QuizScreenState extends State<QuizScreen> {
                         child: Text(
                           currentQuiestionIndex ==
                                   widget.quizSet.questions.length - 1
-                              ? 'Enviar'
+                              ? '  Enviar  '
                               : 'Avançar',
                           style: TextStyle(
                             fontSize: 16,

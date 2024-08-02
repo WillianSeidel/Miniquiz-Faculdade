@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_quiz_uninter/Models/model.dart';
+import 'package:mini_quiz_uninter/main.dart';
+import 'package:mini_quiz_uninter/screens/quiz_screen.dart';
 
 class ResultScreen extends StatelessWidget {
   final int totalQuestions;
@@ -34,8 +36,8 @@ class ResultScreen extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Colors.indigo,
-              Colors.purple,
+              Color.fromARGB(255, 3, 16, 92),
+              Color.fromARGB(255, 37, 229, 243),
             ]),
         borderRadius: BorderRadius.only(
           bottomRight: Radius.circular(0),
@@ -71,37 +73,104 @@ class ResultScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 100),
-          Container(
-            width: MediaQuery.of(context).size.width / 1.3,
-            padding: EdgeInsets.all(20),
-            decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(15)),
-            child: Column(
-              children: [
-                Text(
-                  feedback,
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w500,
+          Center(
+            child: Container(
+              width: MediaQuery.of(context).size.width / 1.3,
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(15)),
+              child: Column(
+                children: [
+                  Text(
+                    feedback,
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ),
-                SizedBox(height: 20),
-                Text(
-                  'Sua pontuação foi de',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
+                  SizedBox(height: 20),
+                  Text(
+                    'Sua pontuação foi de',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  '${totalScore} / ${totalQuestions}',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
+                  SizedBox(height: 10),
+                  Text(
+                    '${totalScore} / ${totalQuestions * 10}',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                )
-              ],
+                  SizedBox(height: 50),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    QuizScreen(quizSet: quizSet),
+                              ));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 30),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  Color.fromARGB(255, 3, 16, 92),
+                                  Color.fromARGB(255, 37, 229, 243),
+                                ]),
+                          ),
+                          child: Text('Repetir',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              )),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MyApp(),
+                              ));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 35),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  Color.fromARGB(255, 3, 16, 92),
+                                  Color.fromARGB(255, 37, 229, 243),
+                                ]),
+                          ),
+                          child: Text('Inicio',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              )),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
           )
         ],

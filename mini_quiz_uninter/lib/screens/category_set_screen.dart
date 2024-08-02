@@ -19,8 +19,8 @@ class CategorySetScreen extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Colors.indigo,
-                Colors.purple,
+                Color.fromARGB(255, 3, 16, 92),
+                Color.fromARGB(255, 37, 229, 243),
               ]),
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(0),

@@ -19,8 +19,8 @@ class Data {
         Question(
             question: 'Qual animaml',
             options: ['dog', 'car', 'bird', 'onix'],
-            selectedIndex: 0),
-      ])
+            selectedIndex: 3),
+      ]),
     ]),
     Category(name: 'Em Construção', image: 'assets/mta.png', quizSets: []),
     Category(name: 'Em Construção', image: 'assets/mta.png', quizSets: []),
