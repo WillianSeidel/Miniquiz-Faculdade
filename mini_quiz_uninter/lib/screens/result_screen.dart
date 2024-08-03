@@ -21,12 +21,12 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String feedback = totalScore < 30
-        ? 'VocÊ falhou'
+        ? 'Você falhou!'
         : totalScore < 60
             ? 'Bom!'
             : totalScore < 80
-                ? 'ótimo'
-                : 'PARABÉNS';
+                ? 'Ótimo!'
+                : 'Parabéns!';
     return Scaffold(
         body: Container(
       height: double.infinity,
@@ -90,7 +90,7 @@ class ResultScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'Sua pontuação foi de',
+                    'Sua pontuação foi de:',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,

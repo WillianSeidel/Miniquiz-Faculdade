@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(15),
                   child: Text(
-                    'Siga em frente',
+                    'Escolha uma opção abaixo:',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,

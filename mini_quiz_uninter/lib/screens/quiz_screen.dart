@@ -78,7 +78,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     Text(
                       widget.quizSet.name,
                       style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 24,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
