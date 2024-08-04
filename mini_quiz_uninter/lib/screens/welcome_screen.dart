@@ -31,7 +31,7 @@ class Inicio extends StatelessWidget {
                   ),
                   child: Center(
                     child: Image.asset(
-                      "assets/books.png",
+                      "assets/studiyclock.png",
                       scale: 0.20,
                     ),
                   )),
@@ -77,7 +77,7 @@ class Inicio extends StatelessWidget {
                       Padding(
                           padding: EdgeInsets.symmetric(horizontal: 40),
                           child: Text(
-                            'Apenas teste',
+                            'Teste seu conheicmento',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 17,

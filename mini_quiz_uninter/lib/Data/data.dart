@@ -2,7 +2,7 @@ import 'package:mini_quiz_uninter/Models/model.dart';
 
 class Data {
   static List<Category> categories = [
-    Category(name: 'Métodos Ágeis', image: 'assets/mta.png', quizSets: [
+    Category(name: 'Métodos Ágeis', image: 'assets/metodos.png', quizSets: [
       QuizSet(name: '[01] - Métodos Ágeis', questions: [
         Question(
             question: 'Qual pokemon',
@@ -58,8 +58,11 @@ class Data {
             selectedIndex: 3),
       ]),
     ]),
-    Category(name: 'Em Construção', image: 'assets/mta.png', quizSets: []),
-    Category(name: 'Em Construção', image: 'assets/mta.png', quizSets: []),
-    Category(name: 'Em Construção', image: 'assets/mta.png', quizSets: [])
+    Category(
+        name: 'Em Construção', image: 'assets/construcao.png', quizSets: []),
+    Category(
+        name: 'Em Construção', image: 'assets/construcao.png', quizSets: []),
+    Category(
+        name: 'Em Construção', image: 'assets/construcao.png', quizSets: [])
   ];
 }
