@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_quiz_uninter/Data/data.dart';
 import 'package:mini_quiz_uninter/screens/category_set_screen.dart';
+import 'package:mini_quiz_uninter/screens/welcome_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -32,7 +33,13 @@ class HomeScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Inicio(),
+                                ));
+                          },
                           child: Icon(
                             Icons.home_filled,
                             color: Colors.white,
