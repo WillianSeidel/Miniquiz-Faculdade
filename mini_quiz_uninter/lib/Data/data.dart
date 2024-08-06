@@ -117,7 +117,7 @@ class Data {
       ]),
     ]),
     Category(
-        name: 'Em Construção', image: 'assets/construcao.png', quizSets: []),
+        name: 'Inteligência Artificial', image: 'assets/ia.png', quizSets: []),
     Category(
         name: 'Em Construção', image: 'assets/construcao.png', quizSets: []),
     Category(
