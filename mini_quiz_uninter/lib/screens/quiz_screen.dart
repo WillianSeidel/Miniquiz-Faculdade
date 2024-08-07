@@ -12,8 +12,10 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  int currentQuiestionIndex = 0;
+  int currentQuestionIndex = 0;
   List<int?> selectedAnswers = [];
+  bool isAnswered = false;
+
   @override
   void initState() {
     super.initState();
@@ -21,25 +23,27 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   void goToNextQuestion() {
-    if (currentQuiestionIndex < widget.quizSet.questions.length - 1) {
+    if (currentQuestionIndex < widget.quizSet.questions.length - 1) {
       setState(() {
-        currentQuiestionIndex++;
+        currentQuestionIndex++;
+        isAnswered = false;
       });
     }
   }
 
   void goToPreviousQuestion() {
-    if (currentQuiestionIndex > 0) {
+    if (currentQuestionIndex > 0) {
       setState(() {
-        currentQuiestionIndex--;
+        currentQuestionIndex--;
+        isAnswered = false;
       });
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    final Question currentQuiestion =
-        widget.quizSet.questions[currentQuiestionIndex];
+    final Question currentQuestion =
+        widget.quizSet.questions[currentQuestionIndex];
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -97,7 +101,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 child: Column(
                   children: [
                     Text(
-                      currentQuiestion.question,
+                      currentQuestion.question,
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -106,30 +110,47 @@ class _QuizScreenState extends State<QuizScreen> {
                     SizedBox(
                       height: 20,
                     ),
-                    ...currentQuiestion.options.asMap().entries.map((entry) {
+                    ...currentQuestion.options.asMap().entries.map((entry) {
                       final index = entry.key;
                       final option = entry.value;
+                      Color? backgroundColor;
+
+                      if (isAnswered) {
+                        if (index == currentQuestion.correctOption) {
+                          backgroundColor = Colors.green;
+                        } else if (index ==
+                            selectedAnswers[currentQuestionIndex]) {
+                          backgroundColor = Colors.red;
+                        } else {
+                          backgroundColor = Colors.white;
+                        }
+                      } else {
+                        backgroundColor =
+                            selectedAnswers[currentQuestionIndex] == index
+                                ? Colors.indigo
+                                : Colors.white;
+                      }
+
                       return GestureDetector(
                         onTap: () {
-                          setState(() {
-                            selectedAnswers[currentQuiestionIndex] = index;
-                          });
+                          if (!isAnswered) {
+                            setState(() {
+                              selectedAnswers[currentQuestionIndex] = index;
+                            });
+                          }
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(
                               vertical: 15, horizontal: 10),
                           margin: EdgeInsets.symmetric(vertical: 10),
                           decoration: BoxDecoration(
-                            color:
-                                selectedAnswers[currentQuiestionIndex] == index
-                                    ? Colors.indigo
-                                    : Colors.white,
+                            color: backgroundColor,
                             border: Border.all(
                               width: 2,
-                              color: selectedAnswers[currentQuiestionIndex] ==
-                                      index
-                                  ? Colors.indigo
-                                  : Colors.grey,
+                              color:
+                                  selectedAnswers[currentQuestionIndex] == index
+                                      ? Colors.indigo
+                                      : Colors.grey,
                             ),
                             borderRadius: BorderRadius.circular(25),
                           ),
@@ -138,8 +159,9 @@ class _QuizScreenState extends State<QuizScreen> {
                               option,
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                color: selectedAnswers[currentQuiestionIndex] ==
-                                        index
+                                color: selectedAnswers[currentQuestionIndex] ==
+                                            index &&
+                                        !isAnswered
                                     ? Colors.white
                                     : Colors.black,
                                 fontWeight: FontWeight.w500,
@@ -158,7 +180,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    currentQuiestionIndex > 0
+                    currentQuestionIndex > 0
                         ? ElevatedButton(
                             onPressed: goToPreviousQuestion,
                             child: Text(
@@ -171,36 +193,42 @@ class _QuizScreenState extends State<QuizScreen> {
                         : SizedBox(),
                     ElevatedButton(
                         onPressed: () {
-                          if (currentQuiestionIndex <
-                              widget.quizSet.questions.length - 1) {
-                            goToNextQuestion();
-                          } else {
-                            int totalCorrect = 0;
-                            for (int i = 0;
-                                i < widget.quizSet.questions.length;
-                                i++) {
-                              if (selectedAnswers[i] ==
-                                  widget.quizSet.questions[i].selectedIndex) {
-                                totalCorrect++;
+                          setState(() {
+                            isAnswered = true;
+                          });
+
+                          Future.delayed(Duration(seconds: 2), () {
+                            if (currentQuestionIndex <
+                                widget.quizSet.questions.length - 1) {
+                              goToNextQuestion();
+                            } else {
+                              int totalCorrect = 0;
+                              for (int i = 0;
+                                  i < widget.quizSet.questions.length;
+                                  i++) {
+                                if (selectedAnswers[i] ==
+                                    widget.quizSet.questions[i].correctOption) {
+                                  totalCorrect++;
+                                }
                               }
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ResultScreen(
+                                      totalQuestions:
+                                          widget.quizSet.questions.length,
+                                      totalAttempts:
+                                          widget.quizSet.questions.length,
+                                      totalCorrect: totalCorrect,
+                                      totalScore: totalCorrect * 10,
+                                      quizSet: widget.quizSet,
+                                    ),
+                                  ));
                             }
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ResultScreen(
-                                    totalQuestions:
-                                        widget.quizSet.questions.length,
-                                    totalAttempts:
-                                        widget.quizSet.questions.length,
-                                    totalCorrect: totalCorrect,
-                                    totalScore: totalCorrect * 10,
-                                    quizSet: widget.quizSet,
-                                  ),
-                                ));
-                          }
+                          });
                         },
                         child: Text(
-                          currentQuiestionIndex ==
+                          currentQuestionIndex ==
                                   widget.quizSet.questions.length - 1
                               ? '  Enviar  '
                               : 'Avançar',

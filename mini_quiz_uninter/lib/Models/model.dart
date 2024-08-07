@@ -15,9 +15,11 @@ class QuizSet {
 class Question {
   String question;
   List<String> options;
-  int selectedIndex;
-  Question(
-      {required this.question,
-      required this.options,
-      required this.selectedIndex});
+  int correctOption; // Renomeado para correctOption
+
+  Question({
+    required this.question,
+    required this.options,
+    required this.correctOption,
+  });
 }

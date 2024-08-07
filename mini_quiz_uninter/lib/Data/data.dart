@@ -12,12 +12,12 @@ class Data {
               'É uma forma de resolver conflitos pessoais',
               'É uma forma de aprimorar habilidades pessoais'
             ],
-            selectedIndex: 0),
+            correctOption: 0),
         Question(
             question:
                 'Qual framework ágil é conhecido por sua ênfase em entregas incrementais e iterativas?',
             options: ['Scrum', 'Kanban', 'Lean', 'XP (Extreme Programming)'],
-            selectedIndex: 0),
+            correctOption: 0),
         Question(
             question: 'Qual dos seguintes não é um valor do Manifesto Ágil?',
             options: [
@@ -26,7 +26,7 @@ class Data {
               'Software funcionando',
               'Colaboração com o cliente'
             ],
-            selectedIndex: 1),
+            correctOption: 1),
         Question(
             question: 'Quem é geralmente considerado o criador do Scrum?',
             options: [
@@ -35,7 +35,7 @@ class Data {
               'Clark Kent',
               'Dave Thomas'
             ],
-            selectedIndex: 1),
+            correctOption: 1),
         Question(
             question: 'O que o termo "Sprint" representa em Scrum?',
             options: [
@@ -44,7 +44,7 @@ class Data {
               'Um planejamento de release',
               'Uma técnica de estimativa'
             ],
-            selectedIndex: 1),
+            correctOption: 1),
         Question(
             question:
                 'Qual técnica é usada para priorizar o backlog do produto em Scrum?',
@@ -54,7 +54,7 @@ class Data {
               'Pareto Analysis',
               'Gantt Chart'
             ],
-            selectedIndex: 1),
+            correctOption: 1),
         Question(
             question:
                 'O que é um "Kanban board" usado para rastrear em um processo ágil?',
@@ -64,7 +64,7 @@ class Data {
               'Estórias de usuário',
               'Itens em progresso'
             ],
-            selectedIndex: 0),
+            correctOption: 0),
         Question(
             question: 'Qual é o objetivo do retrospectiva em Scrum?',
             options: [
@@ -73,7 +73,7 @@ class Data {
               'Identificar áreas para melhorias contínuas',
               'Estimar o esforço para as próximas sprints'
             ],
-            selectedIndex: 2),
+            correctOption: 2),
         Question(
             question: 'Qual dos seguintes não é um princípio do Lean?',
             options: [
@@ -82,7 +82,7 @@ class Data {
               'Adicionar mais etapas ao processo',
               'Entregar rapidamente'
             ],
-            selectedIndex: 0),
+            correctOption: 0),
         Question(
             question: 'Quais são os três pilares do framework Scrum?',
             options: [
@@ -91,29 +91,60 @@ class Data {
               'Planejamento, Feedback, Melhoria',
               'Criação, Avaliação, Refatoração'
             ],
-            selectedIndex: 0)
+            correctOption: 0)
       ]),
       QuizSet(name: '[02] - Métodos Ágeis', questions: [
         Question(
-            question: 'Qual pokemon',
-            options: ['pikachu', 'charmander', 'bulba', 'onix'],
-            selectedIndex: 0),
+            question:
+                'O que significa a sigla "MoSCoW" em gestão de requisitos ágeis?',
+            options: [
+              'Must, Should, Could, Would',
+              'Major, Secondary, Critical, Worthless ',
+              'Mandatory, Selective, Conditional, Wishful',
+              'Model, Scope, Cost, Worth '
+            ],
+            correctOption: 3),
         Question(
-            question: 'Qual bola',
-            options: ['redonda', 'quadrada', 'bulba', 'onix'],
-            selectedIndex: 0),
+            question: 'O que é um "Sprint Retrospective" em Scrum?',
+            options: [
+              'Uma reunião diária para revisar o progresso da equipe',
+              'Uma reunião para revisar o trabalho concluído durante a sprint',
+              'Uma reunião para inspecionar e adaptar o processo de desenvolvimento',
+              'Uma reunião para planejar as atividades da próxima sprint'
+            ],
+            correctOption: 2),
         Question(
-            question: 'Qual cor',
-            options: ['azul', 'tijolo', 'bulba', 'onix'],
-            selectedIndex: 0),
+            question: 'Qual é a diferença principal entre Scrum e Kanban?',
+            options: [
+              'Scrum é iterativo e Kanban é contínuo',
+              'Scrum é mais adequado para equipes pequenas',
+              'Kanban enfatiza mais a entrega de valor contínua',
+              'Scrum requer papéis mais definidos na equipe'
+            ],
+            correctOption: 2),
         Question(
-            question: 'Qual animaml',
-            options: ['dog', 'car', 'bird', 'onix'],
-            selectedIndex: 3),
+            question: 'Qual é o objetivo do "burndown chart" em Scrum?',
+            options: [
+              'Acompanhar o progresso da equipe ao longo da sprint',
+              'Monitorar o uso de recursos da equipe ao longo do tempo',
+              'Identificar problemas de qualidade no código',
+              'Priorizar o backlog do produto'
+            ],
+            correctOption: 1),
+        Question(
+            question:
+                'Qual é o principal objetivo do Scrum Master em um time Scrum?',
+            options: [
+              'Gerenciar o backlog do produto',
+              'Facilitar o progresso da equipe',
+              'Definir a visão do produto',
+              'Desenvolver o software'
+            ],
+            correctOption: 1),
       ]),
       QuizSet(name: '[03] - Métodos Ágeis', questions: [
         Question(
-            question: 'Teste', options: ['a', 'b', 'c', 'd'], selectedIndex: 0),
+            question: 'Teste', options: ['a', 'b', 'c', 'd'], correctOption: 0),
       ]),
     ]),
     Category(
