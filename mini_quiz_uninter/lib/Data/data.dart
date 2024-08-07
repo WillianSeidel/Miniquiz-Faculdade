@@ -141,10 +141,51 @@ class Data {
               'Desenvolver o software'
             ],
             correctOption: 1),
+        Question(
+            question: 'Qual é a duração típica de uma sprint em Scrum?',
+            options: ['2 a 4 semanas', '1 dia', '6 meses', '1 ano'],
+            correctOption: 0),
+        Question(
+            question: 'O que significa "WIP" em Kanban?',
+            options: [
+              'Work In Progress',
+              'Work In Planning',
+              'Work In Production',
+              'Work In Process'
+            ],
+            correctOption: 0),
+        Question(
+            question: 'Qual é o papel do "Burnup Chart" em metodologias ágeis?',
+            options: [
+              'Mostrar o trabalho restante em uma sprint',
+              'Mostrar o progresso realizado e o trabalho total planejado',
+              'Identificar bugs e problemas',
+              'Gerenciar recursos da equipe'
+            ],
+            correctOption: 1),
+        Question(
+            question: 'Qual é a função do "Impediment Log" em Scrum?',
+            options: [
+              'Registrar e rastrear obstáculos que impedem o progresso da equipe',
+              'Registrar e rastrear obstáculos que impedem o progresso da equipe',
+              'Listar as tarefas a serem feitas na sprint'
+                  'Priorizar requisitos do produto',
+              'Documentar bugs encontrados no software'
+            ],
+            correctOption: 0),
+        Question(
+            question: 'O que é uma "Spike" em metodologias ágeis?',
+            options: [
+              'Uma tarefa de pesquisa ou experimento para reduzir incertezas',
+              'Uma técnica de estimativa de esforço',
+              'Um tipo de teste de integração',
+              'Um bug crítico no software'
+            ],
+            correctOption: 0)
       ]),
       QuizSet(name: '[03] - Métodos Ágeis', questions: [
         Question(
-            question: 'Teste', options: ['a', 'b', 'c', 'd'], correctOption: 0),
+            question: 'Teste', options: ['', '', '', ''], correctOption: 0),
       ]),
     ]),
     Category(
