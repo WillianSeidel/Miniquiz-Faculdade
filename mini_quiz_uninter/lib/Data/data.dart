@@ -185,11 +185,93 @@ class Data {
       ]),
       QuizSet(name: '[03] - Métodos Ágeis', questions: [
         Question(
-            question: 'Teste', options: ['', '', '', ''], correctOption: 0),
+            question: 'Em construção',
+            options: ['', '', '', ''],
+            correctOption: 0),
       ]),
     ]),
     Category(
-        name: 'Inteligência Artificial', image: 'assets/ia.png', quizSets: []),
+        name: 'Inteligência Artificial',
+        image: 'assets/ia.png',
+        quizSets: [
+          QuizSet(name: '[01] - Inteligência Artificial', questions: [
+            Question(
+                question: 'O que é machine learning?',
+                options: [
+                  'Uma técnica de construção de hardware',
+                  'Um método de análise de dados que automatiza a construção de modelos analíticos',
+                  'Um tipo de sistema operacional',
+                  'Uma linguagem de programação'
+                ],
+                correctOption: 1),
+            Question(
+                question: 'O que é um "neural network" (rede neural)?',
+                options: [
+                  'Uma rede de computadores interconectados',
+                  'Um modelo de machine learning inspirado no cérebro humano',
+                  'Um software para edição de vídeos',
+                  'Um método de criptografia'
+                ],
+                correctOption: 1),
+            Question(
+                question: 'O que significa "NLP" em inteligência artificial?',
+                options: [
+                  'Natural Language Processing (Processamento de Linguagem Natural)',
+                  'Network Layer Protocol (Protocolo de Camada de Rede)',
+                  'Neural Learning Process (Processo de Aprendizado Neural)',
+                  'Non-Linear Programming (Programação Não Linear)'
+                ],
+                correctOption: 0),
+            Question(
+                question:
+                    'Qual é o principal uso de algoritmos de clustering em machine learning?',
+                options: [
+                  'Agrupar dados em clusters baseados em características semelhantes',
+                  'Prever valores futuros',
+                  'Classificar dados em categorias',
+                  'Reduzir o tamanho dos dados'
+                ],
+                correctOption: 0),
+            Question(
+                question:
+                    'Qual é a diferença entre inteligência artificial forte e fraca?',
+                options: [
+                  'A IA fraca é usada apenas em jogos',
+                  'A IA forte é mais barata para desenvolver',
+                  'A IA fraca é projetada para tarefas específicas, enquanto a IA forte tem habilidades gerais de raciocínio e resolução de problemas',
+                  'A IA forte não é baseada em machine learning'
+                ],
+                correctOption: 2),
+            Question(
+                question: 'O que é deep learning?',
+                options: [
+                  'a) Um subcampo de machine learning que usa redes neurais com muitas camadas (profundas)',
+                  'Um método para resolver equações diferenciais',
+                  'Uma técnica para acelerar redes de computadores',
+                  'Um processo para minerar dados'
+                ],
+                correctOption: 0),
+            Question(
+                question:
+                    'Qual é o objetivo dos algoritmos de reinforcement learning?',
+                options: [
+                  'Agrupar dados semelhantes',
+                  'Treinar agentes para tomar decisões através de recompensas e punições',
+                  'Prever categorias de dados',
+                  'Analisar dados estatísticos'
+                ],
+                correctOption: 1),
+            Question(
+                question: 'O que é um chatbot?',
+                options: [
+                  'Um software de edição de imagens',
+                  'Um programa de computador que simula conversas humanas',
+                  'Uma ferramenta para monitoramento de redes',
+                  'Um dispositivo de armazenamento de dados'
+                ],
+                correctOption: 1)
+          ])
+        ]),
     Category(
         name: 'Em Construção', image: 'assets/construcao.png', quizSets: []),
     Category(
