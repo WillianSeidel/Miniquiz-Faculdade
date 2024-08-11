@@ -54,7 +54,7 @@ class Data {
               'Pareto Analysis',
               'Gantt Chart'
             ],
-            correctOption: 1),
+            correctOption: 0),
         Question(
             question:
                 'O que é um "Kanban board" usado para rastrear em um processo ágil?',
@@ -66,7 +66,7 @@ class Data {
             ],
             correctOption: 0),
         Question(
-            question: 'Qual é o objetivo do retrospectiva em Scrum?',
+            question: 'Qual é o objetivo da retrospectiva em Scrum?',
             options: [
               'Revisar o progresso da sprint',
               'Celebrar o sucesso da equipe',
@@ -281,7 +281,7 @@ class Data {
                 correctOption: 1),
             Question(
                 question:
-                    'Qual é a principal vantagem dos algoritmos de "unsupervised learning" (aprendizado não supervisionado)?',
+                    'Qual é a principal vantagem dos algoritmos de "unsupervised learning"?',
                 options: [
                   'Requerem grandes quantidades de dados rotulados',
                   'Podem identificar padrões ocultos em dados sem rótulos',
