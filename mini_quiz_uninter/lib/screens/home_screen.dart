@@ -111,12 +111,17 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                             SizedBox(height: 10),
-                            Text(category.name,
+                            Center(
+                              child: Text(
+                                category.name,
                                 style: TextStyle(
                                   fontSize: 22,
                                   color: Colors.black.withOpacity(0.6),
                                   fontWeight: FontWeight.w600,
-                                ))
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
                           ],
                         ),
                       ),

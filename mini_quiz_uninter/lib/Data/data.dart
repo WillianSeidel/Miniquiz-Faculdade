@@ -167,9 +167,8 @@ class Data {
             question: 'Qual é a função do "Impediment Log" em Scrum?',
             options: [
               'Registrar e rastrear obstáculos que impedem o progresso da equipe',
-              'Registrar e rastrear obstáculos que impedem o progresso da equipe',
-              'Listar as tarefas a serem feitas na sprint'
-                  'Priorizar requisitos do produto',
+              'Listar as tarefas a serem feitas na sprint',
+              'Priorizar requisitos do produto',
               'Documentar bugs encontrados no software'
             ],
             correctOption: 0),
@@ -234,18 +233,18 @@ class Data {
                 correctOption: 0),
             Question(
                 question:
-                    'Qual é a diferença entre inteligência artificial forte e fraca?',
+                    'Qual dos seguintes é um exemplo de IA aplicada ao reconhecimento de imagem?',
                 options: [
-                  'A IA fraca é usada apenas em jogos',
-                  'A IA forte é mais barata para desenvolver',
-                  'A IA fraca é projetada para tarefas específicas, enquanto a IA forte tem habilidades gerais de raciocínio e resolução de problemas',
-                  'A IA forte não é baseada em machine learning'
+                  'Google Maps',
+                  'Classificação de fotos em álbuns por rostos',
+                  'Processamento de linguagem natural',
+                  'Assistentes de voz'
                 ],
-                correctOption: 2),
+                correctOption: 1),
             Question(
                 question: 'O que é deep learning?',
                 options: [
-                  'a) Um subcampo de machine learning que usa redes neurais com muitas camadas (profundas)',
+                  'Um subcampo de machine learning que usa redes neurais com muitas camadas (profundas)',
                   'Um método para resolver equações diferenciais',
                   'Uma técnica para acelerar redes de computadores',
                   'Um processo para minerar dados'
@@ -268,6 +267,26 @@ class Data {
                   'Um programa de computador que simula conversas humanas',
                   'Uma ferramenta para monitoramento de redes',
                   'Um dispositivo de armazenamento de dados'
+                ],
+                correctOption: 1),
+            Question(
+                question:
+                    'Qual é o principal propósito dos "convolutional neural networks" (CNNs) em IA?',
+                options: [
+                  'Gerenciar grandes bases de dados',
+                  'Analisar e reconhecer padrões em imagens e vídeos',
+                  'Processar linguagem natural',
+                  'Melhorar a velocidade de processamento de texto'
+                ],
+                correctOption: 1),
+            Question(
+                question:
+                    'Qual é a principal vantagem dos algoritmos de "unsupervised learning" (aprendizado não supervisionado)?',
+                options: [
+                  'Requerem grandes quantidades de dados rotulados',
+                  'Podem identificar padrões ocultos em dados sem rótulos',
+                  'São mais rápidos que os algoritmos supervisionados',
+                  'Não necessitam de validação'
                 ],
                 correctOption: 1)
           ])

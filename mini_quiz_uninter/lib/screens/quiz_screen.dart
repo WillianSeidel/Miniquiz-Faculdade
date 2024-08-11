@@ -48,7 +48,7 @@ class _QuizScreenState extends State<QuizScreen> {
       body: Container(
         height: double.infinity,
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -64,16 +64,16 @@ class _QuizScreenState extends State<QuizScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 35),
+              const SizedBox(height: 35),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Row(
                   children: [
                     InkWell(
                       onTap: () {
                         Navigator.pop(context);
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back_ios,
                         color: Colors.white,
                         size: 30,
@@ -81,7 +81,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     ),
                     Text(
                       widget.quizSet.name,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
@@ -91,9 +91,9 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height / 1.6,
-                margin: EdgeInsets.all(16),
-                padding: EdgeInsets.all(16),
+                height: MediaQuery.of(context).size.height / 1.5,
+                margin: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(15),
@@ -102,12 +102,12 @@ class _QuizScreenState extends State<QuizScreen> {
                   children: [
                     Text(
                       currentQuestion.question,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     ...currentQuestion.options.asMap().entries.map((entry) {
@@ -140,9 +140,9 @@ class _QuizScreenState extends State<QuizScreen> {
                           }
                         },
                         child: Container(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               vertical: 15, horizontal: 10),
-                          margin: EdgeInsets.symmetric(vertical: 10),
+                          margin: const EdgeInsets.symmetric(vertical: 10),
                           decoration: BoxDecoration(
                             color: backgroundColor,
                             border: Border.all(
@@ -176,63 +176,66 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     currentQuestionIndex > 0
                         ? ElevatedButton(
                             onPressed: goToPreviousQuestion,
-                            child: Text(
+                            child: const Text(
                               '  Voltar  ',
                               style: TextStyle(
                                 fontSize: 16,
                                 color: Colors.black,
                               ),
                             ))
-                        : SizedBox(),
+                        : const SizedBox(),
                     ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            isAnswered = true;
-                          });
+                        onPressed: selectedAnswers[currentQuestionIndex] != null
+                            ? () {
+                                setState(() {
+                                  isAnswered = true;
+                                });
 
-                          Future.delayed(Duration(seconds: 2), () {
-                            if (currentQuestionIndex <
-                                widget.quizSet.questions.length - 1) {
-                              goToNextQuestion();
-                            } else {
-                              int totalCorrect = 0;
-                              for (int i = 0;
-                                  i < widget.quizSet.questions.length;
-                                  i++) {
-                                if (selectedAnswers[i] ==
-                                    widget.quizSet.questions[i].correctOption) {
-                                  totalCorrect++;
-                                }
+                                Future.delayed(const Duration(seconds: 2), () {
+                                  if (currentQuestionIndex <
+                                      widget.quizSet.questions.length - 1) {
+                                    goToNextQuestion();
+                                  } else {
+                                    int totalCorrect = 0;
+                                    for (int i = 0;
+                                        i < widget.quizSet.questions.length;
+                                        i++) {
+                                      if (selectedAnswers[i] ==
+                                          widget.quizSet.questions[i]
+                                              .correctOption) {
+                                        totalCorrect++;
+                                      }
+                                    }
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => ResultScreen(
+                                            totalQuestions:
+                                                widget.quizSet.questions.length,
+                                            totalAttempts:
+                                                widget.quizSet.questions.length,
+                                            totalCorrect: totalCorrect,
+                                            totalScore: totalCorrect * 10,
+                                            quizSet: widget.quizSet,
+                                          ),
+                                        ));
+                                  }
+                                });
                               }
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ResultScreen(
-                                      totalQuestions:
-                                          widget.quizSet.questions.length,
-                                      totalAttempts:
-                                          widget.quizSet.questions.length,
-                                      totalCorrect: totalCorrect,
-                                      totalScore: totalCorrect * 10,
-                                      quizSet: widget.quizSet,
-                                    ),
-                                  ));
-                            }
-                          });
-                        },
+                            : null,
                         child: Text(
                           currentQuestionIndex ==
                                   widget.quizSet.questions.length - 1
                               ? '  Enviar  '
                               : 'Avançar',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             color: Colors.black,
                           ),

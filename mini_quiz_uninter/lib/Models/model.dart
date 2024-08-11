@@ -15,7 +15,7 @@ class QuizSet {
 class Question {
   String question;
   List<String> options;
-  int correctOption; // Renomeado para correctOption
+  int correctOption;
 
   Question({
     required this.question,
