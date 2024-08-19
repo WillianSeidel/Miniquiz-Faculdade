@@ -1,6 +1,8 @@
 # Miniquiz-Faculdade
-Projeto da Faculdade
+Trata-se de desenvolvimento de aplicativo para atividade extensionista do curso de tecnologo em jogos digitais - Uninter. 
 
+
+Link para download: https://play.google.com/store/apps/details?id=com.willianseidel.quizmta
 <div>
 <img src="https://github.com/user-attachments/assets/0ce1f63f-4e53-4b7a-986d-ab6fc75acfd8" width="30%">
 
