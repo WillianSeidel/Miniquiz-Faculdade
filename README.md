@@ -1,5 +1,5 @@
 # Miniquiz-Faculdade
-Trata-se de desenvolvimento de aplicativo para atividade extensionista do curso de tecnologo em jogos digitais - Uninter. 
+Trata-se do desenvolvimento de aplicativo para atividade extensionista do curso de tecnologo em jogos digitais - Uninter. 
 
 
 Link para download: https://play.google.com/store/apps/details?id=com.willianseidel.quizmta
