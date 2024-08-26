@@ -103,7 +103,7 @@ class Data {
               'Mandatory, Selective, Conditional, Wishful',
               'Model, Scope, Cost, Worth '
             ],
-            correctOption: 3),
+            correctOption: 0),
         Question(
             question: 'O que é um "Sprint Retrospective" em Scrum?',
             options: [
